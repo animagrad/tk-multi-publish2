@@ -18,3 +18,8 @@ Don't hesitate to contact us! You can find us on support@shotgunsoftware.com
 git remote add upstream https://github.com/shotgunsoftware/tk-multi-publish2.git
 git remote add production //bstorage/rep/set/deployment/tk-multi-publish2.git
 ```
+
+Pull upstream updates:
+```
+git pull upstream master
+```
