@@ -48,6 +48,9 @@ class TreeNodeItem(TreeNodeBase):
         widget.set_icon(self._item.icon)
         widget.set_checkbox_value(self.data(0, self.CHECKBOX_ROLE))
 
+        ### AMG edit: connect checkbox enable with item.enabled
+        widget.ui.checkbox.setEnabled(self._item.enabled)
+
         # connect the collapse/expand tool button to the toggle callback
         widget.expand_indicator.clicked.connect(
             lambda: self.setExpanded(not self.isExpanded()))

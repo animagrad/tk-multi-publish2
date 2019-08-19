@@ -23,6 +23,14 @@ from .publish_tree_widget import (
     TopLevelTreeNodeItem
 )
 
+# ### AMG scripts setup
+# import sys
+# AMG_SCRIPTS = '//bstorage/rep/set/scripts'
+# if AMG_SCRIPTS not in sys.path:
+#     sys.path.append(AMG_SCRIPTS)
+# from amg.system import navigator, metadata, utils, amglog
+# ### AMG end
+
 # import frameworks
 settings = sgtk.platform.import_framework("tk-framework-shotgunutils", "settings")
 help_screen = sgtk.platform.import_framework("tk-framework-qtwidgets", "help_screen")
@@ -579,14 +587,22 @@ class AppDialog(QtGui.QWidget):
         self.ui.item_description_label.setText("Description")
         self.ui.item_comments.setPlainText(item.description)
 
+        ### AMG edit
+        if 'no_comments' in item.properties:
+            if item.properties.no_comments:
+                self.ui.item_description_label.hide()
+                self.ui.item_comments.hide()
+            else:
+                self.ui.item_description_label.show()
+                self.ui.item_comments.show()
+
         # if summary thumbnail is defined, item thumbnail should inherit it
         # unless item thumbnail was set after summary thumbnail
         if self._summary_thumbnail and not item.thumbnail_explicit:
             item.thumbnail = self._summary_thumbnail
-        
+
         self.ui.item_thumbnail._set_multiple_values_indicator(False)
         self.ui.item_thumbnail.set_thumbnail(item.thumbnail)
-        
 
         # Items with default thumbnails should still be able to have override thumbnails set by the user
         self.ui.item_thumbnail.setEnabled(True)
