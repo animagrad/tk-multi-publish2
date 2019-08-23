@@ -23,14 +23,6 @@ from .publish_tree_widget import (
     TopLevelTreeNodeItem
 )
 
-# ### AMG scripts setup
-# import sys
-# AMG_SCRIPTS = '//bstorage/rep/set/scripts'
-# if AMG_SCRIPTS not in sys.path:
-#     sys.path.append(AMG_SCRIPTS)
-# from amg.system import navigator, metadata, utils, amglog
-# ### AMG end
-
 # import frameworks
 settings = sgtk.platform.import_framework("tk-framework-shotgunutils", "settings")
 help_screen = sgtk.platform.import_framework("tk-framework-qtwidgets", "help_screen")
@@ -589,7 +581,7 @@ class AppDialog(QtGui.QWidget):
         self.ui.item_description_label.setText("Description")
         self.ui.item_comments.setPlainText(item.description)
 
-        ### AMG edit
+        ### AMG edit start
         if 'no_comments' in item.properties:
             if item.properties.no_comments:
                 self.ui.item_description_label.hide()
@@ -597,6 +589,7 @@ class AppDialog(QtGui.QWidget):
             else:
                 self.ui.item_description_label.show()
                 self.ui.item_comments.show()
+        ### AMG edit end
 
         # if summary thumbnail is defined, item thumbnail should inherit it
         # unless item thumbnail was set after summary thumbnail

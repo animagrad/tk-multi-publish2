@@ -48,8 +48,13 @@ class TreeNodeItem(TreeNodeBase):
         widget.set_icon(self._item.icon)
         widget.set_checkbox_value(self.data(0, self.CHECKBOX_ROLE))
 
-        ### AMG edit: connect checkbox enable with item.enabled
+        ### AMG edit start
+        # connect checkbox enable with item.enabled
         widget.ui.checkbox.setEnabled(self._item.enabled)
+        # connect checkbox checked with item.checked
+        widget.ui.checkbox.clicked.connect(
+            lambda: self.setChecked(self.checked))
+        ### AMG edit end
 
         # connect the collapse/expand tool button to the toggle callback
         widget.expand_indicator.clicked.connect(
@@ -113,6 +118,14 @@ class TreeNodeItem(TreeNodeBase):
         :returns: task or item instance
         """
         return self.item
+
+    ### AMG edit start
+    def setChecked(self, checked):
+        '''
+        Set checked (active) state for corresponding PublishItem
+        '''
+        self._item.checked = checked
+    ### AMG edit end
 
     def setExpanded(self, expand):
         """
