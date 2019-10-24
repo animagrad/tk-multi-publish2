@@ -23,8 +23,9 @@ QListView, QTableView, QScrollArea, QFrame {
 
 /* Use open sans font across the app if core supports it */
 QWidget {
-    font-family: Open Sans;
-    font-style: Regular;
+    /* font-family: Open Sans;
+    font-style: Regular; */
+    font: 16px "Open Sans";
 }
 
 /* need this to kick QT into 'style mode' for labels otherwise things are not formatted correctly */
@@ -262,7 +263,7 @@ ProgressDetailsWidget #progress_label {
 }
 
 ProgressDetailsWidget #log_tree {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 100;
     background-color: #292929;
     alternate-background-color: #292929;
@@ -273,6 +274,7 @@ ProgressDetailsWidget #log_tree::item {
 }
 
 #log_action_button {
+    font-size: 12px;
     border: none;
     border-radius: 2px;
     background-color: rgba(200, 200, 200, 18%);
@@ -393,7 +395,7 @@ ProgressDetailsWidget #log_tree::item {
 }
 
 #summary_frame #details {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 100;
     font-style: italic;
 }
