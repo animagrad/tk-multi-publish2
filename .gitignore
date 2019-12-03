@@ -38,3 +38,5 @@ nosetests.xml
 
 roots.yml
 shotgun.yml
+# Jetbrains
+.idea/
