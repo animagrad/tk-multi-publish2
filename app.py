@@ -55,8 +55,8 @@ class MultiPublish2(sgtk.platform.Application):
                 "dark": {"png": os.path.join(self.disk_location, "icon_256_dark.png")}
             },
         }
-        if self.engine.name != "tk-maya":
-            self.engine.register_command(menu_caption, cb, menu_options)
+        # if self.engine.name != "tk-maya":
+        self.engine.register_command(menu_caption, cb, menu_options)
 
     @property
     def base_hooks(self):
