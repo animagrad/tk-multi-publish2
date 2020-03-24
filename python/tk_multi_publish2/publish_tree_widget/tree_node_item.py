@@ -44,7 +44,9 @@ class TreeNodeItem(TreeNodeBase):
         # create an item widget and associate it with this QTreeWidgetItem
         widget = CustomTreeWidgetItem(self, parent)
         # update with any saved state
-        widget.set_header("<b>%s</b><br>%s" % (self._item.name, self._item.type_display))
+        widget.set_header(
+            "<b>%s</b><br>%s" % (self._item.name, self._item.type_display)
+        )
         widget.set_icon(self._item.icon)
         widget.set_checkbox_value(self.data(0, self.CHECKBOX_ROLE))
 
@@ -58,7 +60,8 @@ class TreeNodeItem(TreeNodeBase):
 
         # connect the collapse/expand tool button to the toggle callback
         widget.expand_indicator.clicked.connect(
-            lambda: self.setExpanded(not self.isExpanded()))
+            lambda: self.setExpanded(not self.isExpanded())
+        )
 
         return widget
 
@@ -79,7 +82,7 @@ class TreeNodeItem(TreeNodeBase):
             items_summaries = []
             task_summaries = []
 
-            for child_index in xrange(self.childCount()):
+            for child_index in range(self.childCount()):
                 child_item = self.child(child_index)
 
                 if isinstance(child_item, TreeNodeTask):
@@ -93,7 +96,9 @@ class TreeNodeItem(TreeNodeBase):
             if len(task_summaries) > 0:
 
                 summary_str = "<b>%s</b><br>" % self.item.name
-                summary_str += "<br>".join(["&ndash; %s" % task_summary for task_summary in task_summaries])
+                summary_str += "<br>".join(
+                    ["&ndash; %s" % task_summary for task_summary in task_summaries]
+                )
                 summary.append(summary_str)
 
             summary.extend(items_summaries)
@@ -101,7 +106,6 @@ class TreeNodeItem(TreeNodeBase):
             return summary
         else:
             return []
-
 
     @property
     def item(self):
@@ -165,7 +169,7 @@ class TreeNodeItem(TreeNodeBase):
 
         show_indicator = False
 
-        for child_index in xrange(self.childCount()):
+        for child_index in range(self.childCount()):
             child_item = self.child(child_index)
 
             if isinstance(child_item, TreeNodeTask):
@@ -209,6 +213,7 @@ class TreeNodeItem(TreeNodeBase):
             icon = self._collapsed_icon
 
         self._embedded_widget.expand_indicator.setIcon(icon)
+
 
 class TopLevelTreeNodeItem(TreeNodeItem):
     """
