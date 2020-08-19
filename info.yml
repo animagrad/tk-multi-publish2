@@ -114,6 +114,7 @@ configuration:
 requires_shotgun_fields:
 
 # More verbose description of this item
+display_name: "Publish"
 description: "Provides UI and functionality to publish files to Shotgun."
 
 # Required minimum versions for this item to run

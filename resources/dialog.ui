@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
-    <height>1000</height>
+    <width>709</width>
+    <height>588</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -213,14 +213,14 @@
                  <widget class="QToolButton" name="drop_area_browse_file">
                   <property name="minimumSize">
                    <size>
-                    <width>240</width>
-                    <height>120</height>
+                    <width>160</width>
+                    <height>85</height>
                    </size>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>240</width>
-                    <height>120</height>
+                    <width>150</width>
+                    <height>85</height>
                    </size>
                   </property>
                   <property name="focusPolicy">
@@ -255,7 +255,7 @@
                   </property>
                   <property name="sizeHint" stdset="0">
                    <size>
-                    <width>22</width>
+                    <width>12</width>
                     <height>0</height>
                    </size>
                   </property>
@@ -265,14 +265,14 @@
                  <widget class="QToolButton" name="drop_area_browse_seq">
                   <property name="minimumSize">
                    <size>
-                    <width>240</width>
-                    <height>120</height>
+                    <width>160</width>
+                    <height>85</height>
                    </size>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>240</width>
-                    <height>120</height>
+                    <width>150</width>
+                    <height>85</height>
                    </size>
                   </property>
                   <property name="focusPolicy">

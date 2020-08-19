@@ -653,16 +653,6 @@ class AppDialog(QtGui.QWidget):
         # Hides the multiple values overlay, as it is only for the summary item.
         self.ui.item_comments._show_multiple_values = False
 
-        ### AMG edit start
-        if 'no_comments' in item.properties:
-            if item.properties.no_comments:
-                self.ui.item_description_label.hide()
-                self.ui.item_comments.hide()
-            else:
-                self.ui.item_description_label.show()
-                self.ui.item_comments.show()
-        ### AMG edit end
-
         # if summary thumbnail is defined, item thumbnail should inherit it
         # unless item thumbnail was set after summary thumbnail
         if self._summary_thumbnail and not item.thumbnail_explicit:
